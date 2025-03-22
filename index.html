@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Exam Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: blue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkblue;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>JEE Exam Result</h2>
+        <input type="text" id="rollNumber" placeholder="Enter Roll Number">
+        <button onclick="fetchResult()">Check Result</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function fetchResult() {
+            const rollNumber = document.getElementById("rollNumber").value;
+            const results = {
+                "12345": "Congratulations! You scored 95%",
+                "67890": "You scored 85%",
+                "11223": "You scored 75%"
+            };
+            
+            document.getElementById("result").innerText = results[rollNumber] || "Result not found";
+        }
+    </script>
+</body>
+</html>
